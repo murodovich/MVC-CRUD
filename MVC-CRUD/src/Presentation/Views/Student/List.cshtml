@@ -1,0 +1,32 @@
+﻿@model List<Presentation.Models.Entities.Student>
+
+<h1>Students</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@student.Email</td>
+                <td>@student.Phone</td>
+                <td>@student.Address</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Student" asp-action="Edit" asp-route-Id="@student.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
